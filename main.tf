@@ -52,7 +52,7 @@ data "aws_iam_policy_document" "main" {
     ]
 
     resources = [
-      # "arn:${data.aws_partition.current.partition}:rds:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:db:${var.cleaner_db_instance_identifier}",
+      "arn:${data.aws_partition.current.partition}:rds:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:db:${var.cleaner_db_instance_identifier}",
       "arn:${data.aws_partition.current.partition}:rds:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:snapshot:${var.cleaner_db_instance_identifier}-*",
     ]
   }
