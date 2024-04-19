@@ -1,11 +1,11 @@
-Creates an AWS Lambda function to clean up manual RDS snapshots
-on a scheduled interval using [truss-aws-tools](https://github.com/trussworks/truss-aws-tools).
+Creates an AWS Lambda function to clean up manual RDS snapshots 
+on a scheduled interval using [milmove-aws-tools](https://github.com/transcom/milmove-aws-tools).
 
 Creates the following resources:
 
 * IAM role for Lambda function find and delete expired RDS snapshots for a
   defined RDS instance.
-* CloudWatch Event to trigger Lambda function on a schedule.
+* CloudWatch Events to trigger Lambda function on a schedule.
 * AWS Lambda function to actually delete excess manual RDS snapshots.
 
 
@@ -13,8 +13,8 @@ Creates the following resources:
 
 ```hcl
 module "rds-snapshot-cleaner" {
-  source  = "trussworks/rds-snapshot-cleaner/aws"
-  version = "1.0.0"
+  source  = "transcom/rds-snapshot-cleaner/aws"
+  version = "4.0.3"
 
   cleaner_db_instance_identifier = "app-staging"
   cleaner_dry_run                = "false"
@@ -24,7 +24,7 @@ module "rds-snapshot-cleaner" {
   environment                    = "staging"
   interval_minutes               = "5"
   s3_bucket                      = "lambda-builds-us-east-1"
-  version_to_deploy              = "2.6"
+  version_to_deploy              = "3.1"
 }
 ```
 

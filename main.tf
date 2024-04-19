@@ -1,5 +1,5 @@
 locals {
-  pkg  = "truss-aws-tools"
+  pkg  = "milmove-aws-tools"
   name = "rds-snapshot-cleaner"
 }
 
