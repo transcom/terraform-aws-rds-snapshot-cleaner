@@ -1,11 +1,11 @@
-Creates an AWS Lambda function to clean up manual RDS snapshots
+Creates an AWS Lambda function to clean up manual RDS snapshots 
 on a scheduled interval using [milmove-aws-tools](https://github.com/transcom/milmove-aws-tools).
 
 Creates the following resources:
 
 * IAM role for Lambda function find and delete expired RDS snapshots for a
   defined RDS instance.
-* CloudWatch Event to trigger Lambda function on a schedule.
+* CloudWatch Events to trigger Lambda function on a schedule.
 * AWS Lambda function to actually delete excess manual RDS snapshots.
 
 
